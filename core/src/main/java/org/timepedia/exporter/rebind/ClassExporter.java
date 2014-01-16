@@ -179,7 +179,7 @@ public class ClassExporter {
       sw.println("]);");
       boolean isArray = retType != null && retType instanceof JExportableArrayType;
       if (retType != null && retType.needsExport() && !isVoid && !isArray) {
-        sw.println("return r == undefined ? null : r != null ? r.instance : r");
+        sw.println("return r == undefined ? null : r != null ? r.g : r");
       } else if (isBoolean) {
         sw.println("return !!r;");
       } else if (isPrimitive) {
